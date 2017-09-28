@@ -2,21 +2,9 @@
 <?php include "function.php"; ?>
 <? php
 if (isset($_POST['submit'])){
-	$id = $_POST['id'];
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-	
-	$query = "UPDATE users
-			SET username = '$username',
-				password = '$password'
-			WHERE id = $id";
-			
-	$result = mysqli_query($koneksi, $query);
-	
-	id(!$result){
-		die("Query failed.");
+	if (isset($_POST['submit'])){
+		updateUserTable();
 	}
-}
 ?>
 <!DOCTYPE html>
 <html>
