@@ -1,16 +1,3 @@
-<?php
-
-		include "db.php";
-
-		$query = "SELECT * FROM users";
-		$result = mysqli_query($koneksi,$query);
-
-		if(!$result)
-		{
-			die('Query Failed'.mysqli_error($koneksi));
-		}
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -31,13 +18,7 @@
 					</div>
 					<div class="form-group">
 						<select name="id" class="form-control">
-							<?php
-								while($row=mysqli_fetch_assoc($result))
-								{
-									$id = $row['id'];
-									echo "<option value='$id'>$id</option>";
-								}
-							?>
+							<option value ="1">1</option>
 						</select>
 					</div>
 					<input type="submit" name="submit" value="Submit" class="btn btn-primary" />
