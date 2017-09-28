@@ -12,12 +12,19 @@
 			die('Query Failed'.mysqli_error($koneksi));
 		}
 
-		while($row =mysqli_fetch_assoc($result))
-		{
-			$id = $row['id'];
-			echo "<option value='$id'>$id</option>";
+		function deleteUser(){
+			global $koneksi ;
+			$id = $_POST['id'];
+			$username = $_POST['username'];
+			$password = $_POST['passsword'];
+			
+			$query ="DELETE FROM users WHERE id= $id";
+			$result = mysqli_query ($koneksi, $query);
+			
+			id (!$result){
+				die("Query failed.");
+			}
 		}
-	}
 	
 	function updateUserTable(){
 		global $koneksi;
